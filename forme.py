@@ -138,6 +138,7 @@ def rectangle(x,y,w,h):
     goto(x,y)
     left(180)
     forward(w//2)
+ 
     left(180)
     down()
     
@@ -153,7 +154,7 @@ def trait(x1,y1,x2,y2):
     Paramètres
         x1, y1 : coordonnées du début du trait
         x2, y2 : coordonnées de la fin du trait
-    Cette function dessine un trait entre les 2 points transmis en paramètres
+    Cette fonction dessine un trait entre les 2 points transmis en paramètres
     '''
     
     up()
