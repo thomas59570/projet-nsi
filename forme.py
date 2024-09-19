@@ -124,11 +124,29 @@ def arc_de_cercle(rayon, angle, info_feutre, coordonnees):
  
     return feutre
  
- 
+def rectangle(x,y,w,h):
+    print("\nRectangle file")
+    '''
+    Paramètres
+        x, y : coordonnées du centre de la base de rectangle
+        w : largeur du rectangle
+        h : hauteur du rectangle
+    Cette fonction dessine un rectangle Le point de coordonnées (x,y) est
+    sur le côté en bas au milieu
+    '''
+    up()
+    goto(x,y)
+    left(180)
+    forward(w//2)
+    left(180)
+    down()
+    
+    for i in range(2):
+        forward(w)
+        left(90)
+        forward(h)
+        left(90)
+    
 # Instructions du programme principal
  
 if __name__ == '__main__':
- 
-    informations_feutre = {'écriture':"blue", 'fond':'#FF88FF', 'épaisseur':5}
-    triangle_equilateral(50, informations_feutre, (50,100))
-    arc_de_cercle(75, 360, informations_feutre, (200,-200))
