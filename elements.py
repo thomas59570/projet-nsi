@@ -69,3 +69,69 @@ def couleur_aleatoire():
     hexa = "ABCDEF0123456789"
     return('#' + ''.join(sample(hexa, 6)))
 
+
+
+from rectangle import rectangle
+from turtle import *
+
+
+def fenetre(x, y):
+    print("\n Fenetre file")
+    '''
+    Paramètres :
+        x est l'abcisse du centre de la fenêtre
+        y est l'ordonnée du sol du niveau de la fenetre
+    Remarque:
+        dessine une fenetre de 30 pixels sur 30 pixels
+
+    '''
+    up()
+    goto(x-15, y)
+    down()
+    pencolor("black")
+    fillcolor("white")
+    begin_fill()
+    rectangle(x-15, y, 30, 30)
+    end_fill()
+
+    up()
+
+
+
+def fenetre_balcon(x, y):
+    print("\nFenetre Balcon file")
+    '''
+    Paramètres :
+        x est l'abcisse du centre de la porte-fenetre-balcon
+        y est l'ordonnée du sol du niveau de la porte-fenetre-balcon
+    Remarque:
+        Dessine une porte-fenetre avec balcon en 2 temps: la porte fenetre de 30 pixels de large par 50 pixels de hauteur
+        puis le balcon
+    '''
+    # porte-fenetre
+    up()
+    goto(x-15, y)
+    down()
+    pencolor("black")
+    fillcolor("white")
+    begin_fill()
+    rectangle(x-15, y, 30, 50)
+    end_fill()
+    up()
+    pencolor("black")
+    left(90)
+
+    trait((xcor() - 4.2), ycor(),
+          (xcor() - 4.2), ycor())
+
+    trait(xcor(), ycor(),
+          xcor(), (ycor() + 25))
+
+    # For loop pour les barreaux
+    for i in range(9):
+
+        trait((xcor() + 4.2), ycor() - 25,
+              (xcor() + 4.2), ycor())
+
+    right(90)
+    rectangle(x - 15, y, 38.4, 25)
