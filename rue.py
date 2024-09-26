@@ -174,3 +174,30 @@ t.hideturtle()
 # terminated the window after clicking
 w.exitonclick()
 
+def immeuble(x, y_sol):
+    print("\n Immeuble file")
+    '''
+    Paramètres
+        x : abscisse du centre de l'étage
+        y_sol : ordonnée du sol du la rue
+    Cette fonction dessine un immeuble Le nombre d'étage est compris aléatoirement entre 0 et 4
+    La couleur de la façade et la couleur de la porte sont tirées au hasard
+    '''
+
+    # Nombre d'étage (aléatoire)
+    nb_etage = randint(0, 4) # random entre 0 et 4
+    print("Nombre d'étage", nb_etage)
+
+    #Couleurs des éléments (aléatoire)
+    c_facade = couleur_aleatoire()
+    c_porte = couleur_aleatoire()
+
+    # Dessin du RDC
+    rdc(x, y_sol, c_facade, c_porte)
+
+    # Dessin des étages
+    for niveau in range(nb_etage):
+      etage(x, y_sol, c_facade, niveau+1)
+
+    # Dessin du toit
+    toit(x, y_sol, nb_etage+1)
