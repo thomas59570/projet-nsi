@@ -126,4 +126,7 @@ def main():
     for i in range(11):
       immeuble(-875+(i*175), y_sol)
     
-
+if __name__ == '__main__'=
+   cree_ciel1()
+   main()
+   route()
