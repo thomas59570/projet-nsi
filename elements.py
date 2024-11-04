@@ -276,3 +276,30 @@ def etage(x, y_sol, couleur, niveau):
         else:
             fenetre_balcon(x-25, y)
         x += 40
+
+
+def arbre(n, longueur):
+    color('brown')
+    if n == 0:
+        color('green')
+        forward(longueur)
+        backward(longueur)
+        color('brown')
+    else:
+        width(n)
+        forward(longueur/3)
+        left(30)
+        arbre(n-1, longueur*2/3)
+        right(60)
+        arbre(n-1, longueur*2/3)
+        left(30)
+        backward(longueur/3)
+        
+def arbre_place(x,y):
+    color('brown')
+    up()
+    goto(x, y)
+    setheading(90)  
+    down()
+    arbre(7,200)
+    
