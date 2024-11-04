@@ -1,178 +1,48 @@
-"""Ce fichier permet de dessiner une rue à l'aide des fonctions suivantes :
 
-+ dessiner_rue_aleatoire()
-+ dessiner_rue_decrite(rue:dict)
-"""
-
-BATMAN : 
-
-#initialize method
-bat = turtle.Turtle()
-
-#size of pointer and pen
-bat.turtlesize(1, 1, 1)
-bat.pensize(3)
-
-#screen info
-wn = turtle.Screen()
-wn.bgcolor("white")
-wn.title("BATMAN")
-
-#colour
-bat.color("black", "black")
+from elements import elements
 
 
-#begin filling color
-bat.begin_fill()
-
-#turn1
-bat.left(90)   # turn pointer direction to left of 90'
-bat.circle(50, 85) #draw circle of radius = 50 and 85'
-bat.circle(15, 110)
-bat.right(180)
-
-#turn 2
-bat.circle(30, 150)
-bat.right(5)
-bat.forward(10) #draw forward line of 10 units
-
-#turn 3
-bat.right(90)
-bat.circle(-70, 140)
-bat.forward(40)
-bat.right(110)
-
-#turn 4
-bat.circle(100, 30)
-bat.circle(30, 100)
-bat.left(50)
-bat.forward(50)
-bat.right(145)
-
-#turn5
-bat.forward(30)
-bat.left(55)
-bat.forward(10)
-
-#reverse
-
-#turn 5
-bat.forward(10)
-bat.left(55)
-bat.forward(30)
-
-#turn 4
-
-bat.right(145)
-bat.forward(50)
-bat.left(50)
-bat.circle(30, 100)
-bat.circle(100, 30)
-
-#turn 3
-bat.right(90)
-bat.right(20)
-bat.forward(40)
-bat.circle(-70, 140)
-
-#turn 2
-bat.right(90)
-bat.forward(10)
-bat.right(5)
-bat.circle(30, 150)
-
-#turn 1
-bat.left(180)
-bat.circle(15, 110)
-bat.circle(50, 85)
-
-#end color filling
-bat.end_fill()
-
-    #end the turtle method
-turtle.done()
-
-
-ciel étoilé:
-
-import turtle
-import random
-  
-  
-# creating turtle object
-t = turtle.Turtle()
-  
-# to activate turtle graphics Screen
-w = turtle.Screen()
-  
-# setting speed of turtle
-t.speed(300)
-  
-# giving the background color of turtle
-# graphics screen
-w.bgcolor("black")
-  
-# giving the color of pen to our turtle
-# for drawing
-t.color("white")
-  
-# giving title to our turtle graphics window
-w.title("Starry Sky")
-  
-# making function to draw the stars
-def stars():
-    for i in range(5):
-        t.fd(10)
-        t.right(144)
-  
-  
-# loop for making number of stars
-for i in range(90):
-    
-    # generating random integer values for x and y
-    x = random.randint(-640, 640)
-    y = random.randint(-330, 330)
-      
-    # calling the function stars to draw the 
-    # stars at random x,y value
-    stars()
-      
-    # took up the turtle's pen
+def cree_ciel1():
+    for i in range(400):
+        
+        # generating random integer values for x and y
+        x = random.randint(-970, 970)
+        y = random.randint(200, 500)
+          
+        # took up the turtle's pen
+        t.up()
+          
+        # go at the x,y coordinate generated above
+        t.goto(x, y)
+        
+        # took down the pen to draw
+       
+        t.down()
+      # calling the function stars to draw the 
+        # stars at random x,y value
+        stars()
+    # for making our moon tooking up the pen
     t.up()
       
-    # go at the x,y coordinate generated above
-    t.goto(x, y)
+    # going at the specific coordinated
+    t.goto(850, 350)
       
-    # took down the pen to draw
+    # took down the pen to start drawing
     t.down()
-  
-# for making our moon tooking up the pen
-t.up()
-  
-# going at the specific coordinated
-t.goto(0, 170)
-  
-# took down the pen to start drawing
-t.down()
-  
-# giving color to turtle's pen
-t.color("white")
-  
-# start filling the color
-t.begin_fill()
-  
-# making our moon
-t.circle(40)
-  
-# stop filling the color
-t.end_fill()
-  
-# after drawing hidding the turtle from
-# the window
-t.hideturtle()
-  
-# terminated the window after clicking
-w.exitonclick()
+      
+    # giving color to turtle's pen
+    t.color("white")
+      
+    # start filling the color
+    t.begin_fill()
+      
+    # making our moon
+    t.circle(70)
+      
+    # stop filling the color
+    t.end_fill()
+    
+    t.penup()
 
 def immeuble(x, y_sol):
     print("\n Immeuble file")
@@ -203,31 +73,57 @@ def immeuble(x, y_sol):
     toit(x, y_sol, nb_etage+1)
 
 
-
-
-
-import turtle
-from random import randint, shuffle
-from sol import sol
-from immeuble import immeuble
+def route():
+    turtle.tracer(0)
+    turtle.penup()
+    turtle.goto(-1000,0)
+    turtle.pendown()
+    pencolor('white')
+    width(5)
+    begin_fill()
+    print(rectangle1(-1000,0,'white'))
+    end_fill()
+    print(rectangle(-1130,-95,150,30))
+    begin_fill()
+    print(rectangle(-830,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(-530,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(-230,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(70,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(370,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(670,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(970,-95,150,30))
+    end_fill()
+    begin_fill()
+    print(rectangle(1270,-95,150,30))
+    end_fill()
 
 def main():
     print("Main file\n")
 
     turtle.clear()
     turtle.setup(800, 600)
-    turtle.speed(0)
+    turtle.tracer(0)
 
     # On définit la hauteur du sol
-    y_sol = -200
+    y_sol = 0
 
     # Dessin du sol de la rue
     sol(y_sol)
 
     # Dessin des 4 immeubles
-    for i in range(4):
-      immeuble(-300+(i*300), y_sol)
-
-    # On ferme la fenêtre s'il y a un clique gauche
-    turtle.exitonclick()
+    for i in range(11):
+      immeuble(-875+(i*175), y_sol)
+    
 
